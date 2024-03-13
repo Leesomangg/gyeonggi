@@ -8,6 +8,7 @@ $(document).ready(function(){
     gnb.mouseleave(function(){
         dim.stop().fadeOut(200)
     })
+    
     })
     // window.onload = function () {
     // };
