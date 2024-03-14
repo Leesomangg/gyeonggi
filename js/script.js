@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(document).ready(function(){
     //    gnb관련코드 // 
     var gnb = $(".mainmenu")
@@ -13,7 +12,6 @@ $(document).ready(function(){
     })
     // window.onload = function () {
     // };
-=======
 $(document).ready(function () {
   //    gnb관련코드 //
   var gnb = $(".mainmenu");
@@ -61,6 +59,9 @@ $(document).ready(function () {
       e.preventDefault();
       if (reIndex == index) {
         // 동일한 버튼을 눌렀을때
+        // 이미 특정한 버튼을 선택한 상태에서 다시 해당 버튼을 선택했을때, 이미 선택된 상태이므로 추가적인 동작을 하지 않도록 방지하기 위해 사용
+        // 현재 클릭한 버튼과 이전에 클릭한 버튼이 같은 경우에는 아무런 동작을 하지 않는것이 바람직
+        // reIndex == index 조건이 필요하다
       } else {
         // 다른 버튼을 눌렀을때 일단 모든 서브메뉴들을 담는다.
         allDepth3.hide();
@@ -85,4 +86,3 @@ $(document).ready(function () {
 });
 // window.onload = function () {
 // };
->>>>>>> parent of 27ca205 (Revert "헤더 완성")
