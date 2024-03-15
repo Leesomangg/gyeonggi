@@ -85,7 +85,30 @@ body {
   position: relative;
   display: block;
   background-color: #2a3a67;
+  z-index: 999;
 }
+/* 스크롤 됐을때 */
+.h-fix {
+  position: fixed;
+  left: 0;
+  top: -141px;
+  width: 100%;
+}
+.h-fix-mt {
+  margin-top: 207px;
+}
+.h-show {
+  display: block !important;
+  width: 20%;
+  text-align: center;
+}
+.h-show img {
+  width: 70%;
+}
+.h-fix-gnb {
+  width: 80% !important;
+}
+/* 스크롤 됐을때 끝 */
 .h-link-list {
   position: relative;
   display: block;
@@ -107,7 +130,7 @@ body {
   height: 15px;
   background-color: rgba(255, 255, 255, 0.3);
 }
-.h-link-list > li:first-child::before {
+.h-link-list > li:first-child:before {
   content: none;
 }
 .h-link-list > li > a {
@@ -423,7 +446,7 @@ body {
   width: 24px;
   height: 18px;
 }
-.search-bt > i {
+.search-bt i {
   vertical-align: 3px;
 }
 /* 서브메뉴에 호버 했을때 바탕화면 */
@@ -435,9 +458,5 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   display: none;
-<<<<<<< HEAD
+  z-index: 99999;
 }
-
-=======
-}
->>>>>>> parent of 27ca205 (Revert "헤더 완성")

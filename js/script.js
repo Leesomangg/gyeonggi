@@ -1,17 +1,16 @@
-$(document).ready(function(){
-    //    gnb관련코드 // 
-    var gnb = $(".mainmenu")
-    var dim = $(".header-dim")
-    gnb.mouseenter(function(){
-    dim.stop().fadeIn(200)
-    })
-    gnb.mouseleave(function(){
-        dim.stop().fadeOut(200)
-    })
-    
-    })
-    // window.onload = function () {
-    // };
+$(document).ready(function () {
+  //    gnb관련코드 //
+  var gnb = $(".mainmenu");
+  var dim = $(".header-dim");
+  gnb.mouseenter(function () {
+    dim.stop().fadeIn(200);
+  });
+  gnb.mouseleave(function () {
+    dim.stop().fadeOut(200);
+  });
+});
+// window.onload = function () {
+// };
 $(document).ready(function () {
   //    gnb관련코드 //
   var gnb = $(".mainmenu");
@@ -83,6 +82,65 @@ $(document).ready(function () {
       }
     });
   });
+  // 상단 메뉴 처리관련
+  var hTop = $(".header-top");
+  var hTop_H = hTop.height();
+  var hMiddle = $(".header-middle");
+  var hMiddle_H = hMiddle.height();
+  var hHeight = hTop_H + hMiddle_H;
+  $(window).scroll(function () {
+    // 스크롤 위치를 파악한다
+    var scY = $(window).scrollTop();
+    if (scY >= hHeight) {
+      $(".header").addClass("h-fix");
+      $(".content").addClass("h-fix-mt");
+      $(".logo-gnb").addClass("h-show");
+      $(".gnb").addClass("h-fix-gnb");
+      // gotop 기능 추가 예정
+    } else {
+      $(".header").removeClass("h-fix");
+      $(".content").removeClass("h-fix-mt");
+      $(".logo-gnb").removeClass("h-show");
+      $(".gnb").removeClass("h-fix-gnb");
+      // gotop 기능 추가 예정
+    }
+  });
+  // gnb 관련
+  var gnb = $(".mainmenu");
+  var dim = $(".header-dim");
+  gnb.mouseenter(function () {
+    dim.stop().fadeIn(800);
+  });
+  gnb.mouseleave(function () {
+    dim.stop().fadeOut(800);
+  });
+  // swiper 슬라이드
+  // content
+  var sw_content = new Swiper(".sw-content", {
+    loop: true,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    loopedSlides: 3,
+  });
+  // sw-notice
+  var sw_notice = new Swiper(".sw-notice", {
+    autoplay: {
+      delay: 2000,
+    },
+    loop: true,
+    navigation: {
+      nextEl: ".sw-notice-next",
+      prevEl: ".sw-notice-prev",
+    },
+    pagination: {
+      el: ".sw-notice-pg",
+      type: "fraction",
+    },
+  });
+  // 일시 멈춤
+  // ===================================
 });
 // window.onload = function () {
 // };
