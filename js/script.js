@@ -140,6 +140,56 @@ $(document).ready(function () {
     },
   });
   // 일시 멈춤
+  $(".sw-notice-pause").click(function () {
+    for (var i = 0; i < sw_notice.length; i++) sw_notice[i].autoplay.stop();
+  });
+  // 자동재생 실행
+  $(".sw-notice-play").click(function () {
+    for (var i = 0; i < sw_notice.length; i++) sw_notice[i].autoplay.start();
+  });
+  // 공지사항 목록 관련 (사업공고 , 입찰공고 , 결과발표)
+  var noticeA = $(".notice-menu > li");
+  $.each(noticeA, function (index, item) {
+    $(this)
+      .find("a")
+      .click(function (e) {
+        // href 막기
+        e.preventDefault();
+        // 포커스를 적용한다
+        // 탭 내용을 보여준다
+        showNotice(index);
+      });
+  });
+  // 내용 모음 (메뉴 클릭했을때 나오는 내용)
+  var noticeLi = $(".notice-cont > li");
+  // 내용을 보여주고, 포커스를 이동하는 사용자 지정 함수 : showNotice()
+  function showNotice(_index) {
+    noticeA.removeClass("notice-menu-focus");
+    noticeA.eq(_index).addClass("notice-menu-focus");
+    noticeLi.hide();
+    if (_index == 1) {
+      return;
+    }
+    noticeLi.eq(_index).show();
+  }
+  var sw_edu = new Swiper(".sw-edu", {
+    autoplay: {
+      delay: 2000,
+      // 사용자가 터치드래그 하고 난 후 자동 실행
+      disableOnInteraction: false,
+    },
+    loop: true,
+    // 중첩된(swiper 내부에 다른 swiper가 있는) swiper 인스턴스에 대해 스와이프 동작이 가능
+    nested: true,
+    navigation: {
+      nextEl: ".sw-edu-next",
+      prevEl: ".sw-edu-prev",
+    },
+    pagination: {
+      el: ".sw-edu-pg",
+      type: "fraction",
+    },
+  });
   // ===================================
 });
 // window.onload = function () {

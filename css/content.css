@@ -127,3 +127,300 @@
 .sw-notice-next:before {
   content: "\e940";
 }
+/* 슬라이드 우측 */
+.content-more {
+  position: absolute;
+  color: #fff;
+  top: 75px;
+  right: 60px;
+  font-family: "NanumSquare";
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.notice-menu {
+  position: relative;
+  display: block;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 60px;
+}
+.notice-menu > li {
+  position: relative;
+  display: block;
+  float: left;
+  margin-right: 15px;
+}
+.notice-menu > li > a {
+  position: relative;
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 3rem;
+  letter-spacing: -0.5px;
+  font-family: "NanumSquare";
+}
+.notice-menu-focus::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: -7px;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 100%;
+}
+.notice-menu-focus a {
+  color: rgba(255, 255, 255, 1) !important;
+  font-weight: 500 !important;
+}
+.notice-cont {
+  position: relative;
+  display: block;
+  margin-left: 50px;
+  margin-top: 35px;
+}
+.notice-cont > li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  color: #fff;
+}
+.notice-cont > li:first-child {
+  display: block;
+}
+/* 공지사항 영역 */
+.notice-box {
+  position: relative;
+  display: block;
+  width: 570px;
+  height: 75px;
+  margin-bottom: 35px;
+}
+.notice-box-date {
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 100%;
+  padding-right: 40px;
+  float: left;
+}
+.notice-box-yymm {
+  position: relative;
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  font-family: "NanumSquare";
+  line-height: 20px;
+}
+.notice-box-dd {
+  position: relative;
+  display: block;
+  font-family: "NanumSquare";
+  font-size: 4.8rem;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: -2.5px;
+  text-align: center;
+}
+.notice-box-txt {
+  position: relative;
+  display: block;
+  width: 470px;
+  height: 100%;
+  float: right;
+}
+.notice-box-txt a {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+.notice-box-txt a:hover .notice-box-tit {
+  text-decoration: underline;
+}
+.notice-box-tit {
+  position: relative;
+  display: block;
+  font-family: "NanumSquare";
+  font-size: 2rem;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.5px;
+  line-height: 2.6rem;
+  margin-bottom: 10px;
+}
+.notice-box-more {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  display: block;
+  font-family: "NanumSquare";
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: -0.5px;
+  line-height: 1.7rem;
+}
+.notice-box-more i {
+  padding-left: 12px;
+  vertical-align: -2px;
+}
+/* 공지사항 영역 */
+/* 알림 영역 */
+.content-alram {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.alram-bg {
+  background: #2a3a67 url("../images/bg_pattern.png");
+}
+.alram-list-bg {
+  background: url("../images/bg_gray.jpg") no-repeat center;
+  background-size: cover;
+}
+.content-alram-left,
+.content-alram-right {
+  position: relative;
+  display: block;
+  width: 50%;
+  height: 100%;
+  float: left;
+  padding: 40px 17px 20px 25px;
+}
+.alram-top {
+  position: relative;
+  display: block;
+}
+.alram-tit {
+  position: relative;
+  display: block;
+  font-family: "NanumSquare";
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.5px;
+  line-height: 30px;
+}
+.alram-tit:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -10px;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 100%;
+}
+.alram-more {
+  position: absolute;
+  right: 0;
+  top: 9px;
+  display: block;
+  font-family: "NanumSquare";
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+.alram-cont {
+  position: relative;
+  display: block;
+  padding-top: 35px;
+}
+.alram-edu-link:hover .alram-edu-tit {
+  text-decoration: underline;
+}
+.alram-edu {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 175px;
+  background: url("../images/post.jpg") no-repeat top;
+  background-size: cover;
+  margin-bottom: 25px;
+}
+.alram-edu-tit {
+  position: relative;
+  display: block;
+  font-family: "NanumSquare";
+  font-size: 2rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 2.6rem;
+  margin-bottom: 10px;
+}
+.alram-edu-desc {
+  position: relative;
+  display: block;
+  font-family: "NanumSquare";
+  font-size: 1.7rem;
+  font-weight: 100;
+  line-height: 2.4rem;
+  color: #fff;
+}
+.sw-edu {
+  padding-bottom: 60px;
+}
+.sw-edu-control {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  white-space: nowrap;
+}
+.sw-edu-prev {
+  position: relative;
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  background: #fff;
+  border: none;
+  border-radius: 100%;
+  font-size: 1.4rem;
+  color: #333;
+  line-height: 23px;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 15px;
+}
+.sw-edu-next {
+  position: relative;
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  background: #fff;
+  border: none;
+  border-radius: 100%;
+  font-size: 1.4rem;
+  color: #333;
+  line-height: 23px;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 15px;
+}
+.sw-edu-pg {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  bottom: 0;
+  line-height: 23px;
+  font-family: "NanumSquare";
+}
+.sw-edu-pg .swiper-pagination-current {
+  margin-right: 10px;
+}
+.sw-edu-pg .swiper-pagination-total {
+  margin-left: 10px;
+}
+.edu-bg1 {
+  background: url("../images/edu1.jpg") no-repeat top;
+  background-size: cover;
+}
+.edu-bg2 {
+  background: url("../images/edu2.png") no-repeat top;
+  background-size: cover;
+}
