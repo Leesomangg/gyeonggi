@@ -8,19 +8,6 @@ $(document).ready(function () {
   gnb.mouseleave(function () {
     dim.stop().fadeOut(200);
   });
-});
-// window.onload = function () {
-// };
-$(document).ready(function () {
-  //    gnb관련코드 //
-  var gnb = $(".mainmenu");
-  var dim = $(".header-dim");
-  gnb.mouseenter(function () {
-    dim.stop().fadeIn(200);
-  });
-  gnb.mouseleave(function () {
-    dim.stop().fadeOut(200);
-  });
   // 메뉴관련
   var mainMenuLi = $(".mainmenu > li");
   var subMenu = $(".submenu");
@@ -39,8 +26,6 @@ $(document).ready(function () {
       $(this).find(".submenu").removeClass("submenu_focus");
     });
   });
-  // subMenuLi
-  $.each(subMenu, function () {});
   // subMenuLi
   var subMenuLi = $(".submenu > li");
   var allDepth3 = $(".submenu-3rd");
@@ -109,10 +94,10 @@ $(document).ready(function () {
   var gnb = $(".mainmenu");
   var dim = $(".header-dim");
   gnb.mouseenter(function () {
-    dim.stop().fadeIn(800);
+    dim.stop().fadeIn(500);
   });
   gnb.mouseleave(function () {
-    dim.stop().fadeOut(800);
+    dim.stop().fadeOut(500);
   });
   // swiper 슬라이드
   // content
@@ -124,10 +109,11 @@ $(document).ready(function () {
     },
     loopedSlides: 3,
   });
-  // sw-notice
+  // sw_notice
   var sw_notice = new Swiper(".sw-notice", {
     autoplay: {
       delay: 2000,
+      disableOnInteraction: false,
     },
     loop: true,
     navigation: {
@@ -141,11 +127,15 @@ $(document).ready(function () {
   });
   // 일시 멈춤
   $(".sw-notice-pause").click(function () {
-    for (var i = 0; i < sw_notice.length; i++) sw_notice[i].autoplay.stop();
+    for (var i = 0; i < sw_notice.length; i++) {
+      sw_notice[i].autoplay.stop();
+    }
   });
   // 자동재생 실행
   $(".sw-notice-play").click(function () {
-    for (var i = 0; i < sw_notice.length; i++) sw_notice[i].autoplay.start();
+    for (var i = 0; i < sw_notice.length; i++) {
+      sw_notice[i].autoplay.start();
+    }
   });
   // 공지사항 목록 관련 (사업공고 , 입찰공고 , 결과발표)
   var noticeA = $(".notice-menu > li");
@@ -190,6 +180,46 @@ $(document).ready(function () {
       type: "fraction",
     },
   });
+  // 알람 탭 메뉴 기능
+  var alramA = $(".alram-tab-menu a");
+  var alramCont = $(".alram-tab-cont");
+  $.each(alramA, function (index, item) {
+    $(this).click(function (e) {
+      e.preventDefault();
+      alramCont.removeClass("alram-tab-cont-focus");
+      alramCont.eq(index).addClass("alram-tab-cont-focus");
+      alramA.removeClass("alram-tab-menu-focus");
+      alramA.eq(index).addClass("alram-tab-menu-focus");
+    });
+  });
+  // 알람 탭 메뉴 스와이퍼
+  var sw_navi = new Swiper(".sw-navi", {
+    loop: true,
+    slidesPerView: 3,
+    navigation: {
+      nextEl: ".sw-navi-next",
+      prevEl: ".sw-navi-prev",
+    },
+    centeredSlides: true,
+    loopedSlides: 3,
+    slideToClickedSlide: true,
+  });
+  // 알람 탭 했을때 content 연결
+  sw_content.controller.control = sw_navi;
+  sw_navi.controller.control = sw_content;
+  // hub 영억
+  // 허브 메뉴 저장
+  var hubMenu = $(".hub-menu a");
+  // 허브 내용들을 저장
+  var hubInfos = $(".hub-info > li");
+  // 모두 기능이 똑같다
+  $.each(hubMenu , function(index , item){
+    // 마우스 오버를 처리
+    $(this).mouseenter(function(){
+      hubInfos.removeClass("hub-info-focus")
+      hubInfos.eq(index).addClass("hub-info-focus")
+    })
+  })
   // ===================================
 });
 // window.onload = function () {
