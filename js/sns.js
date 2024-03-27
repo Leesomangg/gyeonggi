@@ -49,7 +49,10 @@ window.addEventListener("load", function () {
       $(this).addClass("news-focus");
     });
     $(this).mouseleave(function () {
-      $(this).removeClass("news-focus");
+      if (newsFocusNum == index) {
+        return;
+      }
     });
+    $(this).removeClass("news-focus");
   });
 });

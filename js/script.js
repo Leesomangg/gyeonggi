@@ -1,4 +1,36 @@
 $(document).ready(function () {
+  // 우츨 픽스 메뉴
+  var fixA = $(".fix-a");
+  $.each(fixA, function (index, item) {
+    $(this).click(function () {
+      // e.preventDefault();
+      fixA.removeClass("fix-a-focus");
+      fixA.eq(index).addClass("fix-a-focus");
+    });
+  });
+  // 스크롤시에 우측 고정메뉴를 포커스 처리
+  var hebPosY = $("#hub").offset().top - 66;
+  var snsPosY = $("#sns").offset().top - 66;
+  $(window).scroll(function () {
+    // 스크롤 바의 위치 파악 px 값
+    var scY = $(window).scrollTop();
+    if (scY >= snsPosY) {
+      fixA.removeClass("fix-a-focus");
+      fixA.eq(2).addClass("fix-a-focus");
+    } else if (scY >= hebPosY) {
+      fixA.removeClass("fix-a-focus");
+      fixA.eq(1).addClass("fix-a-focus");
+    } else {
+      fixA.removeClass("fix-a-focus");
+      fixA.eq(0).addClass("fix-a-focus");
+    }
+  });
+  // gotop
+  $(".gotop").click(function (e) {
+    e.preventDefault();
+    $("html").stop().animate({ scrollTop: 0 }, 600);
+  });
+
   //    gnb관련코드 //
   var gnb = $(".mainmenu");
   var dim = $(".header-dim");
@@ -82,12 +114,14 @@ $(document).ready(function () {
       $(".logo-gnb").addClass("h-show");
       $(".gnb").addClass("h-fix-gnb");
       // gotop 기능 추가 예정
+      $(".gotop").addClass("gotop_focus");
     } else {
       $(".header").removeClass("h-fix");
       $(".content").removeClass("h-fix-mt");
       $(".logo-gnb").removeClass("h-show");
       $(".gnb").removeClass("h-fix-gnb");
       // gotop 기능 추가 예정
+      $(".gotop").removeClass("gotop_focus");
     }
   });
   // gnb 관련
@@ -213,13 +247,13 @@ $(document).ready(function () {
   // 허브 내용들을 저장
   var hubInfos = $(".hub-info > li");
   // 모두 기능이 똑같다
-  $.each(hubMenu , function(index , item){
+  $.each(hubMenu, function (index, item) {
     // 마우스 오버를 처리
-    $(this).mouseenter(function(){
-      hubInfos.removeClass("hub-info-focus")
-      hubInfos.eq(index).addClass("hub-info-focus")
-    })
-  })
+    $(this).mouseenter(function () {
+      hubInfos.removeClass("hub-info-focus");
+      hubInfos.eq(index).addClass("hub-info-focus");
+    });
+  });
   // ===================================
 });
 // window.onload = function () {
